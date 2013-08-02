@@ -1,0 +1,7 @@
+<%= render 'form' %>
+
+<ul class="photos" id="photos">
+  <% @photos.each do |photo| %>
+    <li class="photo"><%= image_tag photo.image_url %></li>
+  <% end %>
+</ul>

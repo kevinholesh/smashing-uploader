@@ -1,0 +1,12 @@
+<%= s3_uploader_form callback_url: photos_url, callback_param: "photo[image_url]", id: "new_photo", key_starts_with: 'direct/' do %>
+  <ul class="errors"></ul>
+  <div class="field">
+    <%= label_tag :file %>
+    <%= file_field_tag :file, multiple: true %>
+  </div>
+
+  <p class="instructions">
+    <strong>Tip:</strong> To upload multiple photos, drag them here straight from your computer or browse for the images. You can even drag or select a whole folder!
+  </p>
+<% end %>
+

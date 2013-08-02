@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  image_url: http://dribbble.s3.amazonaws.com/users/78637/screenshots/953800/geo_tagging_.jpg
+
+two:
+  image_url: http://dribbble.s3.amazonaws.com/users/103971/screenshots/701486/iphone_sidebar_perspective.jpg
+
+three:
+  image_url: http://dribbble.s3.amazonaws.com/users/13307/screenshots/864910/ui-kit.jpg
+
+four:
+  image_url: http://dribbble.s3.amazonaws.com/users/40806/screenshots/1109343/redesign_ios7_big.jpg
+
+five:
+  image_url: http://dribbble.s3.amazonaws.com/users/78637/screenshots/974693/easy_note.jpg
+
+six:
+  image_url: http://dribbble.s3.amazonaws.com/users/23807/screenshots/864978/_______2.jpg
+
+seven:
+  image_url: http://dribbble.s3.amazonaws.com/users/2965/screenshots/943079/dbshot.jpg
+
+eight:
+  image_url: http://dribbble.s3.amazonaws.com/users/139816/screenshots/1111540/safari_icon.png
