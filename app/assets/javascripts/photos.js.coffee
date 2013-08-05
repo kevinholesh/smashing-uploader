@@ -2,6 +2,7 @@ jQuery ->
 
   uploadingCount = 0
 
+  # Activate jQuery File Upload
   $("#new_photo").S3Uploader
     before_add: (file) ->
       types = /(\.|\/)(gif|jpe?g|png)$/i
@@ -19,22 +20,25 @@ jQuery ->
     progress_bar_target: $('.photos .new')
     remove_completed_progress_bar: false
 
+  # When a photo is done uploading
   $('#new_photo').bind "s3_upload_complete", (e, content) ->
     $('.photos').find("##{content.unique_id}").toggleClass('uploading done')
-
+  
+  # When a photo upload fails
   $('#new_photo').bind "s3_upload_failed", (e, content) ->
-    console.log "Error uploading photo: #{content.error_thrown}"
-
+    $('ul.errors').append($('<li>').text("Error uploading photo: #{content.error_thrown}"))
+  
+  # When a photo upload succeeds
   $('#new_photo').bind "ajax:success", (e, data) ->
     uploadingCount--
 
 
+  # Make the upload form look droppable
   $('#new_photo').bind 'dragover', (e) ->
     $dumbo = $(this)
     timeout = window.dropZoneTimeout
-    if (timeout)
-      clearTimeout(timeout)
-
+    clearTimeout(timeout) if timeout
+  
     if e.target == $dumbo[0]
       $dumbo.addClass('dragover')
     else
@@ -43,11 +47,11 @@ jQuery ->
       window.dropZoneTimeout = null
       $dumbo.removeClass('dragover')
     , 100
-
+  
   $(document).bind 'drop dragover', (e) ->
     e.preventDefault()
-
-
+  
+  
   # Warn the person if they still have photos uploading and they try to close the page
   window.onbeforeunload = ->
     if uploadingCount > 0

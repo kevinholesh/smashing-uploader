@@ -1,5 +1,6 @@
 $blue: #357EDF;
 
+// Upload form
 #new_photo {
   background: #eee;
   border: 1px solid #bbb;
@@ -19,16 +20,19 @@ $blue: #357EDF;
     margin: 0 auto;
     width: 70%;
   }
+  // When you drag a file from your desktop onto this form, we need to let the user know they can drop it
   &.dragover {
     box-shadow: inset 0 0 0 10px $blue;
   }
 }
 
+// In case something goes wrong during the file upload
 ul.errors {
   color: red;
   list-style: none;
 }
 
+// A basic list of the photos
 .photos {
   padding: 20px;
   .new {
@@ -45,6 +49,7 @@ ul.errors {
       width: 100%;
       height: auto;
     }
+    // A photo is being uploaded
     &.uploading {
       img {
         opacity: 0.3;
@@ -65,6 +70,7 @@ ul.errors {
         }
       }
     }
+    // A photo is done uploading
     &.done:before {
       content: "\2713"; // checkmark
       background: rgba(green,0.6);
