@@ -1,7 +1,8 @@
 <%= render 'form' %>
 
-<ul class="photos" id="photos">
+<div class="photos"id="photos">
+  <div class="new"></div>
   <% @photos.each do |photo| %>
-    <li class="photo"><%= image_tag photo.image_url %></li>
+    <div class="photo"><%= image_tag photo.image_url %></div>
   <% end %>
-</ul>
+</div>

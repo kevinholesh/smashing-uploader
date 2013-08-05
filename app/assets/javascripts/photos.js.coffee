@@ -10,18 +10,17 @@ jQuery ->
         window.loadImage(
           file
           (img) ->
-            $('.photos').prepend("<li class='photo uploading' id='#{file.unique_id}'><span class='image'></span><div class='progress'><div class='bar' style='width:0%'></div></div></li>")
             $("##{file.unique_id} .image").html(img)
         )
         return true
       else
         $('ul.errors').append($('<li>').text("#{file.name} is not a gif, jpeg, or png image file so it wasn't uploaded"))
         return false
-    progress_bar_target: $('ul.photos')
-    # remove_completed_progress_bar: false
+    progress_bar_target: $('.photos .new')
+    remove_completed_progress_bar: false
 
   $('#new_photo').bind "s3_upload_complete", (e, content) ->
-    $li = $('.photos').find("li##{content.unique_id}").toggleClass('uploading done')
+    $('.photos').find("##{content.unique_id}").toggleClass('uploading done')
 
   $('#new_photo').bind "s3_upload_failed", (e, content) ->
     console.log "Error uploading photo: #{content.error_thrown}"

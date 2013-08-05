@@ -1,4 +1,4 @@
-<%= s3_uploader_form callback_url: photos_url, callback_param: "photo[image_url]", id: "new_photo", key_starts_with: 'direct/' do %>
+<%= s3_uploader_form callback_url: photos_url, callback_param: "photo[image_url]", id: "new_photo", key_starts_with: "direct/" do %>
   <ul class="errors"></ul>
   <div class="field">
     <%= label_tag :file %>
@@ -10,3 +10,6 @@
   </p>
 <% end %>
 
+<script id="template-upload" type="text/x-tmpl">
+  <div class="photo uploading" id="{%=o.unique_id%}"><span class="image"></span><div class="progress"><div class="bar" style="width:0%"></div></div></div>
+</script>

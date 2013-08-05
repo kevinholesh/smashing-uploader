@@ -29,8 +29,12 @@ ul.errors {
   list-style: none;
 }
 
-ul.photos {
-  li.photo {
+.photos {
+  padding: 20px;
+  .new {
+    display: inline-block;
+  }
+  .photo {
     display: inline-block;
     list-style: none;
     margin: 5px;
